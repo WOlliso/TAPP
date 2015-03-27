@@ -4,7 +4,6 @@
 package com.humanbooster.tedi.tapp.tests;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class JournalTest {
