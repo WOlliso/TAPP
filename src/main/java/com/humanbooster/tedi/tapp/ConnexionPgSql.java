@@ -22,20 +22,16 @@ public class ConnexionPgSql implements Connexion {
 		this.pwd = pwd;
 	}
 
+	@Override
 	public Connection connexion() {
 
 		try {
 
 			connexion = DriverManager.getConnection(url, user, pwd);
 
-<<<<<<< HEAD
 		} catch (final SQLException e) {
 			// TODO Auto-generated catch block
-=======
-		} catch (SQLException e) {
 
->>>>>>> refs/heads/master
-			e.printStackTrace();
 		}
 
 		return connexion;
