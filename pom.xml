@@ -40,9 +40,7 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.186</version>
-		</dependency>
-
-		
+		</dependency>		
 	</dependencies>
 
 	<build>
@@ -70,13 +68,6 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
-
-
-
-
-
-
 </project>
