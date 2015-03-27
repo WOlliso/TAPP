@@ -85,5 +85,6 @@ public class TestDocument {
 	@After
 	public void end() throws SQLException {
 		con.close();
+
 	}
 }

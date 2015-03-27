@@ -1,4 +1,4 @@
-package com.humanbooster.tedi.tapp;
+package com.humanbooster.tedi.tapp.tests;
 
 import org.junit.Assert;
 import org.junit.Before;
