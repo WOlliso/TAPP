@@ -10,6 +10,9 @@
 	<name>projetpremier</name>
 	<url>http://maven.apache.org</url>
 
+	
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -27,6 +30,12 @@
 			<version>2.45.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.186</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -37,15 +46,31 @@
 				<version>2.5.1</version>
 				<configuration>
 					<formats>
-						<!-- uncomment the following for HTML report, but we will be
-						using Jenkins -->
-						<!--
-						<format>html</format>
-						-->
+						<!-- uncomment the following for HTML report, but we will be using 
+							Jenkins -->
+						<!-- <format>html</format> -->
 						<format>xml</format>
 					</formats>
 				</configuration>
 			</plugin>
+			
+			 <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+			
+			</plugin>
+			
 		</plugins>
-		</build>
+	</build>
+	
+	
+	
+	
+	
+	
 </project>
