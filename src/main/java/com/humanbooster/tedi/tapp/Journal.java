@@ -2,6 +2,13 @@ package com.humanbooster.tedi.tapp;
 
 public class Journal {
 
+	String name;
+
+	// Constructor method
+	public Journal() {
+
+	}
+
 	// Create a new memo
 	public void createMemo() {
 

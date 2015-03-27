@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.humanbooster.tedi.tapp.Document;
+import com.humanbooster.tedi.tapp.tests.ConnexionH2;
 
 public class TestDocument {
 
