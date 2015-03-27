@@ -15,10 +15,6 @@ public class ConnexionPgSql implements Connexion {
 	private final String pwd;
 	private Connection connexion;
 
-	/*
-	 * static Statement statement; static ResultSet resulSet;
-	 */
-
 	public ConnexionPgSql(String url, String user, String pwd) {
 		super();
 		this.url = url;
@@ -29,36 +25,20 @@ public class ConnexionPgSql implements Connexion {
 	public Connection connexion() {
 
 		try {
+
 			connexion = DriverManager.getConnection(url, user, pwd);
 
+<<<<<<< HEAD
 		} catch (final SQLException e) {
 			// TODO Auto-generated catch block
+=======
+		} catch (SQLException e) {
+
+>>>>>>> refs/heads/master
 			e.printStackTrace();
 		}
 
 		return connexion;
 	}
-
-	/*
-	 * public ResultSet resultSet(String request) { try { statement =
-	 * connexion().createStatement(); resulSet =
-	 * statement.executeQuery(request);
-	 * 
-	 * } catch (SQLException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); }
-	 * 
-	 * return resulSet; }
-	 * 
-	 * 
-	 * public List<Object> getResulSet() { List<Object> list = new
-	 * ArrayList<Object>();
-	 * 
-	 * try { while (resulSet.next()) { list.add(resulSet.getConcurrency());
-	 * 
-	 * } } catch (SQLException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } return list;
-	 * 
-	 * }
-	 */
 
 }
