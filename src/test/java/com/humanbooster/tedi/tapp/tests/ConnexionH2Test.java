@@ -1,4 +1,4 @@
-package com.humanbooster.tedi.projetpremier;
+package com.humanbooster.tedi.tapp.tests;
 
 import static org.junit.Assert.assertNotNull;
 
