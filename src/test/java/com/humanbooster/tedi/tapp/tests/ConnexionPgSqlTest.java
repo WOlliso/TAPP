@@ -1,41 +1,26 @@
-package com.humanbooster.tedi.tapp.tests;
+package com.humanbooster.tedi.tapp;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.humanbooster.tedi.tapp.ConnexionPgSql;
-
 public class ConnexionPgSqlTest {
 
-	String url;
-	String user;
-	String pass;
+	String driver = "org.postgresql.Driver";
 
 	@Before
 	public void init() {
-		user = "aqli";
-		pass = "aqli";
 
 	}
 
 	@Test
 	public void testCorrectConnection() {
-		url = "jdbc:postgresql://localhost:5432/tapp";
-		ConnexionPgSql connexionPgSql = new ConnexionPgSql(url, user, pass);
-		Assert.assertNotNull(connexionPgSql.connexion());
-	}
+		try {
+			Class<?> driverClass = Class.forName(driver);
 
-	@Test
-	public void testIncorrectConnection() {
-		url = "jdbc:postgresql://localhost:54/tapp";
-		ConnexionPgSql connexionPgSql = new ConnexionPgSql(url, user, pass);
-		Assert.assertNull(connexionPgSql.connexion());
+			Assert.assertNotNull(driverClass);
+		} catch (ClassNotFoundException e) {
+			Assert.fail("Driver class not found!");
+		}
 	}
-
-	/*
-	 * @Test public void test() { ConnexionPgSql connexionPgSql = new
-	 * ConnexionPgSql( "jdbc:postgresql://localhost:5432/tapp", "aqli", "aqli");
-	 * assertNotNull(connexionPgSql.connexion()); }
-	 */
 }
