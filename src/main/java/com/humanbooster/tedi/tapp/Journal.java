@@ -16,7 +16,6 @@ public class Journal {
 
 	// Constructor method
 	public Journal() {
-
 	}
 
 	// Create a new memo
@@ -49,5 +48,4 @@ public class Journal {
 	public void deleteMemo() {
 
 	}
-
 }
