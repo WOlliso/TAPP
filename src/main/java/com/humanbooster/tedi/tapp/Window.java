@@ -1,37 +1,17 @@
 package com.humanbooster.tedi.tapp;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import java.awt.BorderLayout;
-
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.SpringLayout;
-
 import java.awt.Font;
-
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-
-import net.miginfocom.swing.MigLayout;
-
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class Window {
 
@@ -74,7 +54,8 @@ public class Window {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		final JLabel lblTapp = new JLabel("TAPP: Teacher Advanced Productivity Platform");
+		final JLabel lblTapp = new JLabel(
+				"TAPP: Teacher Advanced Productivity Platform");
 		lblTapp.setBounds(21, 5, 351, 23);
 		lblTapp.setFont(new Font("Calibri", Font.BOLD | Font.ITALIC, 18));
 
@@ -112,7 +93,8 @@ public class Window {
 				System.out.println(" km km km km ");
 
 				final ConnexionPgSql connection = new ConnexionPgSql(
-						"jdbc:postgresql://localhost:5432/MyBigDatabase", "user", "0000");
+						"jdbc:postgresql://localhost:5432/MyBigDatabase",
+						"user", "0000");
 				final String request = "SELECT id, firstname, lastname FROM teachers";
 				System.out.println("Connection worked.");
 
