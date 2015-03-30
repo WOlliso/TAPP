@@ -4,24 +4,34 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.BorderLayout;
+
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
+
 import java.awt.Font;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+
 import net.miginfocom.swing.MigLayout;
+
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Window {
 
@@ -99,6 +109,22 @@ public class Window {
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				System.out.println(" km km km km ");
+
+				final ConnexionPgSql connection = new ConnexionPgSql(
+						"jdbc:postgresql://localhost:5432/MyBigDatabase", "user", "0000");
+				final String request = "SELECT id, firstname, lastname FROM teachers";
+				System.out.println("Connection worked.");
+
+				/*
+				 * Statement stmt = connection.createStatement(); ResultSet
+				 * resultSet = stmt.executeQuery(request);
+				 * 
+				 * while (resultSet.next()) { int i = resultSet.getInt("id");
+				 * String s = resultSet.getString("firstname"); String s2 =
+				 * resultSet.getString("lastname"); System.out.println(i + " | "
+				 * + s + " " + s2);}
+				 */
 			}
 		});
 		frame.getContentPane().setLayout(null);
