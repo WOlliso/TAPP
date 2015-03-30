@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Document {
+
 	String url = "jdbc:postgresql://localhost:5432/tapp";
 	String user = "user";
 	String password = "formation";
