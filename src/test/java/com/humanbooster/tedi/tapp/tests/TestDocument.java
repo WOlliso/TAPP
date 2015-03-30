@@ -84,6 +84,8 @@ public class TestDocument {
 
 	@After
 	public void end() throws SQLException {
+		String sql2 = "DROP TABLE public.documents;";
+		con.createStatement().executeUpdate(sql2);
 		con.close();
 
 	}
