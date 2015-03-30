@@ -1,7 +1,6 @@
 package com.humanbooster.tedi.tapp;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -11,6 +10,11 @@ public class Eleve {
 	private int age;
 	private String classe;
 	Clavier clavier = new Clavier();
+	String url = "jdbc:postgresql://localhost:5432/tapp";
+	String user = "utilisateur";
+	String password = "utilisateur";
+	ConnexionPgSql connection = new ConnexionPgSql(url, user, password);
+	Connection connect = connection.connexion();
 
 	public String getNom() {
 		return nom;
@@ -80,41 +84,27 @@ public class Eleve {
 		return request;
 	}
 
-	public void requeteajouteleve() throws SQLException {
-		String url = "jdbc:postgresql://localhost:5432/tapp";
-		String user = "utilisateur";
-		String passwd = "utilisateur";
-		try (Connection connect = DriverManager
-				.getConnection(url, user, passwd)) {
-			connect.setAutoCommit(false);
-			// ecriture de la requete
-			String request = "INSERT INTO eleves (nom, prenom,classe) VALUES(?,?,?)";
-			try {
-				PreparedStatement recupsaisie = connect
-						.prepareStatement(request);
-				// Saisie de la fiche
-				System.out.println("Saisissez le nom : ");
-				recupsaisie.setString(1, clavier.lirechaine());
-				// recupsaisie.executeUpdate();
-				System.out.println("Saisissez le prenom : ");
-				recupsaisie.setString(2, clavier.lirechaine());
-				// recupsaisie.executeUpdate();
-				System.out.println("Saisissez la classe : ");
-				recupsaisie.setString(3, clavier.lirechaine());
-				recupsaisie.executeUpdate();
+	public void requeteajouteleve(final String nom, final String prenom,
+			final String classe, final Connection connect) {
+		// ecriture de la requete
+		String request = "INSERT INTO eleves (nom, prenom,classe) VALUES(?,?,?)";
+		try {
+			PreparedStatement recupsaisie = connect.prepareStatement(request);
+			// Saisie de la fiche
+			recupsaisie.setString(1, getNom());
+			// recupsaisie.executeUpdate();
+			// System.out.println("Saisissez le prenom : ");
+			recupsaisie.setString(2, getPrenom());
+			// recupsaisie.executeUpdate();
+			// System.out.println("Saisissez la classe : ");
+			recupsaisie.setString(3, getClasse());
+			// recuperation du resultat et insertion dans la base
+			recupsaisie.executeUpdate();
 
-				connect.commit();
-				// recuperation du resultat et insertion dans la base
-				recupsaisie.executeUpdate();
-
-				System.out.println("Insertion effectuée");
-
-			} catch (SQLException e) {
-				// traitement de l'exception
-				connect.rollback();
-				System.out.println("Probléme Insertion");
-				e.printStackTrace();
-			}
+		} catch (SQLException e) {
+			// traitement de l'exception
+			System.out.println("Probléme Insertion");
+			e.printStackTrace();
 		}
 	}
 
