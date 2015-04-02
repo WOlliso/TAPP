@@ -3,4 +3,5 @@ target/
 .project
 bin
 .settings
+*.jsfdia
 
