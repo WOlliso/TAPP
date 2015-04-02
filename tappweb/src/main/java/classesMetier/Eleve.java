@@ -1,7 +1,6 @@
 package classesMetier;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -10,9 +9,14 @@ public class Eleve {
 	private String prenom;
 	private int age;
 	private String classe;
-	Clavier clavier = new Clavier();
+	String url = "jdbc:postgresql://localhost:5432/tapp";
+	String user = "user";
+	String password = "formation";
+	ConnexionPgSql connection = new ConnexionPgSql(url, user, password);
+	Connection con = connection.connexion();
 
 	public String getNom() {
+
 		return nom;
 	}
 
@@ -80,41 +84,28 @@ public class Eleve {
 		return request;
 	}
 
-	public void requeteajouteleve() throws SQLException {
-		String url = "jdbc:postgresql://localhost:5432/tapp";
-		String user = "utilisateur";
-		String passwd = "utilisateur";
-		try (Connection connect = DriverManager
-				.getConnection(url, user, passwd)) {
-			connect.setAutoCommit(false);
-			// ecriture de la requete
-			String request = "INSERT INTO eleves (nom, prenom,classe) VALUES(?,?,?)";
-			try {
-				PreparedStatement recupsaisie = connect
-						.prepareStatement(request);
-				// Saisie de la fiche
-				System.out.println("Saisissez le nom : ");
-				recupsaisie.setString(1, clavier.lirechaine());
-				// recupsaisie.executeUpdate();
-				System.out.println("Saisissez le prenom : ");
-				recupsaisie.setString(2, clavier.lirechaine());
-				// recupsaisie.executeUpdate();
-				System.out.println("Saisissez la classe : ");
-				recupsaisie.setString(3, clavier.lirechaine());
-				recupsaisie.executeUpdate();
+	public void requeteajouteleve(String nom, String prenom, String Classe,
+			Connection con) throws SQLException {
 
-				connect.commit();
-				// recuperation du resultat et insertion dans la base
-				recupsaisie.executeUpdate();
+		con.setAutoCommit(false);
+		// ecriture de la requete
+		String request = "INSERT INTO eleves (nom, prenom,classe) VALUES(?,?,?)";
+		try {
+			PreparedStatement recupsaisie = con.prepareStatement(request);
 
-				System.out.println("Insertion effectuée");
+			recupsaisie.executeUpdate();
 
-			} catch (SQLException e) {
-				// traitement de l'exception
-				connect.rollback();
-				System.out.println("Probléme Insertion");
-				e.printStackTrace();
-			}
+			con.commit();
+			// recuperation du resultat et insertion dans la base
+			recupsaisie.executeUpdate();
+
+			System.out.println("Insertion effectuée");
+
+		} catch (SQLException e) {
+			// traitement de l'exception
+			con.rollback();
+			System.out.println("Probléme Insertion");
+			e.printStackTrace();
 		}
 	}
 

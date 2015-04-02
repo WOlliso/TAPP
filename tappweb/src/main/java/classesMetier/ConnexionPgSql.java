@@ -15,10 +15,13 @@ public class ConnexionPgSql {
 	private static String pwd;
 	private static Connection connexion;
 
-	/*
-	 * public ConnexionPgSql(String url, String user, String pwd) { super();
-	 * this.url = url; this.user = user; this.pwd = pwd; }
-	 */
+	public ConnexionPgSql(String url, String user, String pwd) {
+		super();
+		this.url = url;
+		this.user = user;
+		this.pwd = pwd;
+	}
+
 	public static Connection connexion() {
 
 		try {
