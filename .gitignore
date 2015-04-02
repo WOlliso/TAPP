@@ -1,13 +1,6 @@
-/target/
-/.classpath
-/.project
+target/
+.classpath
+.project
 bin
 .settings
-/forms-1.3.0-src.zip
-<<<<<<< HEAD
-/forms-1.3.0.jar
-/miglayout-src.zip
-/miglayout15-swing.jar
-=======
-/miglayout-src.zip
->>>>>>> refs/heads/master
+
