@@ -11,7 +11,7 @@ public class Journal {
 	String url = "jdbc:postgresql://localhost:5432/tapp";
 	String user = "user";
 	String password = "formation";
-	ConnexionPgSql connection = new ConnexionPgSql(url, user, password);
+	Services connection = new Services(url, user, password);
 	Connection con = connection.connexion();
 
 	// Constructor method
