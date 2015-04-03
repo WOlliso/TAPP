@@ -1,6 +1,21 @@
 package classesMetier;
 
+
 public class Prof {
-	String userName;
+	private String nom;
+	private String prenom;
+	private String user;
+	private String pwd;
+	private TableauDeBord tableauDeBord;
+
+	//private Connection connexion;
+	private boolean connected;
+
+
+
+
+
+
+
 
 }
