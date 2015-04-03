@@ -8,12 +8,13 @@ public class Eleve {
 	private String nom;
 	private String prenom;
 	private int age;
-	private String classe;
-	String url = "jdbc:postgresql://localhost:5432/tapp";
+	private Classe classe;
+	private Fiche ficheEleve;
+	/*String url = "jdbc:postgresql://localhost:5432/tapp";
 	String user = "user";
 	String password = "formation";
 	ConnexionPgSql connection = new ConnexionPgSql(url, user, password);
-	Connection con = connection.connexion();
+	Connection con = connection.connexion();*/
 
 	public String getNom() {
 
