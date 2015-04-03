@@ -206,7 +206,12 @@
 			<version>1.4.186</version>
 		</dependency>		
 
-
+ 		<!-- Make things pretty! -->
+        <dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>5.1</version>
+        </dependency> 
 
     </dependencies>
 

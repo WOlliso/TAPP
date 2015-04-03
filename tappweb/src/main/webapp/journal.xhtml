@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="WEB-INF/templates/Basic.xhtml">
+	
+	<ui:define name="content">
+	
+	<h:form title="Create Memo">
+	
+	<p:panelGrid columns="4" cellpadding="10">
+	
+	<h:outputText value="Memo Name" />
+	<p:inputText id="memoname" required="true" />
+	<p:commandButton id="creatememobutton" value="Create Memo" action="#{" />
+	<h:outputText value="hello" />
+	
+	</p:panelGrid>
+	
+	
+	</h:form>
+	    
+	  
+	    
+	    
+	    
+	    
+	</ui:define>
+
+</ui:composition>
+</html>
