@@ -10,6 +10,10 @@ public class Eleve {
 	private int age;
 	private Classe classe;
 
+	public Eleve() {
+
+	}
+
 	public Eleve(String nom, String prenom, int age, Classe classe) {
 		super();
 		this.nom = nom;
@@ -67,7 +71,8 @@ public class Eleve {
 
 	public Eleve insertEleve(String nom, String prenom, int age, Classe classe) throws SQLException {
 
-		final PreparedStatement preparedStatement = ServicesDAO.preparedStatement(Requests.INSERT_ELEVE);
+		final PreparedStatement preparedStatement = ServicesDAO
+				.preparedStatement(Requests.INSERT_ELEVE);
 		preparedStatement.setString(1, nom);
 		preparedStatement.setString(2, prenom);
 		preparedStatement.setInt(3, age);

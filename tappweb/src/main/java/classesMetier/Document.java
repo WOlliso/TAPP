@@ -1,8 +1,11 @@
 package classesMetier;
 
-
 public class Document {
 	String nom;
+
+	public Document() {
+
+	}
 
 	public Document(String nom) {
 		super();
@@ -16,5 +19,4 @@ public class Document {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
 }
