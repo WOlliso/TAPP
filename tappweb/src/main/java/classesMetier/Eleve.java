@@ -50,55 +50,55 @@ public class Eleve {
 		this.classe = classe;
 	}
 
-
-
 	/*
 	 * 
-	 * public static final String INSERT_ELEVES = "INSERT INTO eleves (nom, prenom,classe) VALUES(?,?,?)";
-	public static final String SELECT_ELEVES = "SELECT * FROM eleves";
-	public static final String SELECT_ELEVE_PAR_NOM = "SELECT * FROM eleves WHERE nom= ?";
-	public static final String SELECT_ELEVES_PAR_CLASSE = "SELECT * FROM eleves WHERE classe= ?";
-	public static final String UPDATE_CLASSE_ELEVES="UPDATE eleves SET classe = ? WHERE nom = ?";
-	public static final String UPDATE_ELEVES="UPDATE eleves SET nom=? prenom=? classe=? WHERE nom = ?";
-	public static final String DELETE_ELEVES="DELETE FROM eleves WHERE nom = ?";
-	 * 
-	 * 
-	 * */
+	 * public static final String INSERT_ELEVES =
+	 * "INSERT INTO eleves (nom, prenom,classe) VALUES(?,?,?)"; public static
+	 * final String SELECT_ELEVES = "SELECT * FROM eleves"; public static final
+	 * String SELECT_ELEVE_PAR_NOM = "SELECT * FROM eleves WHERE nom= ?"; public
+	 * static final String SELECT_ELEVES_PAR_CLASSE =
+	 * "SELECT * FROM eleves WHERE classe= ?"; public static final String
+	 * UPDATE_CLASSE_ELEVES="UPDATE eleves SET classe = ? WHERE nom = ?"; public
+	 * static final String
+	 * UPDATE_ELEVES="UPDATE eleves SET nom=? prenom=? classe=? WHERE nom = ?";
+	 * public static final String
+	 * DELETE_ELEVES="DELETE FROM eleves WHERE nom = ?";
+	 */
 
+	public Eleve insertEleve(String nom, String prenom, int age, Classe classe) throws SQLException {
 
-	public Eleve insertEleve(String nom, String prenom, int age, Classe classe) throws SQLException{
-
-		PreparedStatement preparedStatement=Services.preparedStatement(Requests.INSERT_ELEVE);
+		final PreparedStatement preparedStatement = ServicesDAO.preparedStatement(Requests.INSERT_ELEVE);
 		preparedStatement.setString(1, nom);
 		preparedStatement.setString(2, prenom);
 		preparedStatement.setInt(3, age);
 		preparedStatement.setObject(4, classe);
 		preparedStatement.executeUpdate();
 
-		return  new Eleve(nom,prenom, age,classe);
+		return new Eleve(nom, prenom, age, classe);
 	}
 
-
-	public List<Eleve> selectEleves(){
-		return null;
-	}
-	public Eleve selectEleveParNom(){
-
+	public List<Eleve> selectEleves() {
 		return null;
 	}
 
-	public Eleve selectEleveParClasse(){
+	public Eleve selectEleveParNom() {
+
 		return null;
 	}
 
-	public boolean updateEleveParNom(){
+	public Eleve selectEleveParClasse() {
+		return null;
+	}
+
+	public boolean updateEleveParNom() {
 		return false;
 	}
 
-	public boolean updateClasseEleve(){
+	public boolean updateClasseEleve() {
 		return false;
 	}
-	public boolean deleteEleve(){
+
+	public boolean deleteEleve() {
 		return false;
 	}
 }
