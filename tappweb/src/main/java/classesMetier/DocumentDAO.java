@@ -3,6 +3,7 @@ package classesMetier;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DocumentDAO extends ServicesDAO {
@@ -43,10 +44,18 @@ public class DocumentDAO extends ServicesDAO {
 	}
 
 	public List<Document> alldocs() throws SQLException {
+		ArrayList<Document> tab = new ArrayList<Document>();
 		final PreparedStatement preparedStatement = ServicesDAO
 				.preparedStatement(SELECT_DOCUMENTS);
 		final ResultSet rst = preparedStatement.executeQuery();
-		return null;
+		while (rst.next()) {
+			String nom = rst.getString("nom");
+
+			tab.add(new Document(nom));
+		}
+
+		return tab;
+
 	}
 
 	public void deletedoc(String nom) throws SQLException {

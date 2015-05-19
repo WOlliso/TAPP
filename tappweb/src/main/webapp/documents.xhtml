@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
 <f:view locale="#{facesContext.externalContext.requestLocale}">
 
 	<ui:composition template="WEB-INF/templates/Basic.xhtml">
@@ -14,6 +15,7 @@
 				<h:outputLabel
 					value="Bienvenue sur votre espace de gestion de documents">
 				</h:outputLabel>
+				
 				<h:panelGrid columns="4">
 					<h:outputLink id="lien_aff" value="Documentaffichage.jsf">
 						<h:outputText value="#{botns['documents.lienaff']}">
