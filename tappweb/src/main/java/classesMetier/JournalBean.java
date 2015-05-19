@@ -1,6 +1,7 @@
 package classesMetier;
 
 import java.sql.Date;
+import java.sql.SQLException;
 
 import javax.enterprise.inject.Model;
 
@@ -25,7 +26,11 @@ public class JournalBean {
 		this.date = date;
 	}
 
-	public void createMemo(String name, Date date) {
+	public void createJournal(String name, Date date) {
 
+	}
+	public void deleteJournal() throws SQLException {
+		ServicesDAO.preparedStatement(JournalDAO.DELETE_CAHIER_JOURNALS);
+		
 	}
 }
