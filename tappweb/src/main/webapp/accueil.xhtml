@@ -11,7 +11,22 @@
 	    
 	</ui:define>
 	<ui:define name="content">
-	    Add your content here or delete to use the default
+	   <h:panelGrid columns="3">
+					<h:outputLink id="lien_aff" value="documents.jsf">
+						<h:outputText value="Voir documents">
+						</h:outputText>
+					</h:outputLink>
+					<h:outputLink id="lien_add" value="journal.jsf">
+						<h:outputText value="Voir journal">
+						</h:outputText>
+					</h:outputLink>
+					<h:outputLink id="lien_mod" value="listEleves.jsf">
+						<h:outputText value="Voir élèves">
+						</h:outputText>
+					</h:outputLink>
+					
+			
+				</h:panelGrid>
 	</ui:define>
 	<ui:define name="footer">
 	    

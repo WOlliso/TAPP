@@ -39,6 +39,9 @@ public class EditerdocBean {
 		doc = req.selectdoc(nom);
 
 		return doc;
+	}
 
+	public String docunique() {
+		return "documentunique";
 	}
 }
