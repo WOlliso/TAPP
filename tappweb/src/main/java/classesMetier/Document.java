@@ -1,5 +1,8 @@
 package classesMetier;
 
+import javax.enterprise.inject.Model;
+
+@Model
 public class Document {
 	String nom;
 

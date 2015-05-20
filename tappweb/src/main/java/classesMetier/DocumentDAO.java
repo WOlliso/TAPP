@@ -3,8 +3,11 @@ package classesMetier;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
+import javax.enterprise.inject.Model;
+
+@Model
 public class DocumentDAO extends ServicesDAO {
 	public static final String INSERT_DOCUMENTS = "INSERT INTO documents (nom_documents) VALUES(?)";
 	public static final String SELECT_DOCUMENTS = "SELECT * FROM documents";
@@ -37,16 +40,29 @@ public class DocumentDAO extends ServicesDAO {
 				.preparedStatement(SELECT_DOCUMENT_PAR_NOM);
 		prepareStatement.setString(1, nom);
 		final ResultSet rst = prepareStatement.executeQuery();
-		final String nomfinal = rst.getString("nom_documents");
+		String nomfinal = null;
+		while (rst.next()) {
+
+			nomfinal = rst.getString("nom_documents");
+		}
+
 		return new Document(nomfinal);
 
 	}
 
-	public List<Document> alldocs() throws SQLException {
+	public ArrayList<Document> alldocs() throws SQLException {
+		ArrayList<Document> tab = new ArrayList<Document>();
 		final PreparedStatement preparedStatement = ServicesDAO
 				.preparedStatement(SELECT_DOCUMENTS);
 		final ResultSet rst = preparedStatement.executeQuery();
-		return null;
+		while (rst.next()) {
+			String nom = rst.getString("nom_documents");
+
+			tab.add(new Document(nom));
+		}
+
+		return tab;
+
 	}
 
 	public void deletedoc(String nom) throws SQLException {
