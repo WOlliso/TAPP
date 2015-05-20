@@ -1,9 +1,11 @@
-package classesMetier;
+package org.tapp.bll;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.enterprise.inject.Model;
+
+import org.tapp.dal.DocumentDAO;
 
 @Model
 public class EditerdocBean {

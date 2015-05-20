@@ -1,4 +1,4 @@
-package classesMetier;
+package org.tapp.bll;
 
 import java.util.List;
 

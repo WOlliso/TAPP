@@ -8,8 +8,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import classesMetier.Eleve;
+import org.tapp.bll.Eleve;
 
 //import com.humanbooster.tedi.tapp.tests.ConnexionH2;
 

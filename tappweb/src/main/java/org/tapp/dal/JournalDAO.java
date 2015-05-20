@@ -1,4 +1,5 @@
-package classesMetier;
+package org.tapp.dal;
+
 
 public class JournalDAO extends ServicesDAO {
 

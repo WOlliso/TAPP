@@ -1,4 +1,4 @@
-package classesMetier;
+package org.tapp.dal;
 
 import java.sql.Connection;
 

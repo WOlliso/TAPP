@@ -1,10 +1,13 @@
-package classesMetier;
+package org.tapp.dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.tapp.bll.Constantes;
+import org.tapp.bll.Requests;
 
 
 public class ServicesDAO {

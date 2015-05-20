@@ -1,9 +1,11 @@
-package classesMetier;
+package org.tapp.dal;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import org.tapp.bll.Eleve;
 
 public class EleveDAO extends ServicesDAO {
 	public static final String INSERT_ELEVES = "INSERT INTO eleves (nom,prenom,classe) VALUES(?,?,?)";
