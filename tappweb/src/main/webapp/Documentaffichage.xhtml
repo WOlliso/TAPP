@@ -9,7 +9,21 @@
 <ui:composition template="WEB-INF/templates/Basic.xhtml">
 	
 	<ui:define name="content">
-	    Add your content here or delete to use the default
+	       <h:form>
+	<h:panelGrid columns="3">
+	 
+	<h:outputLabel value="Nom du dossier à selectionner">
+	</h:outputLabel>
+	<h:inputText id="field_doc" value="#{editerdocBean.nom}">
+	</h:inputText>
+	<h:message style="color:red;" for="field_doc"/>
+	<h:commandButton value="OK" action="#{editerdocBean.getDoc}">
+	</h:commandButton>
+	
+		
+	
+	</h:panelGrid>
+	</h:form> 
 	</ui:define>
 	
 </ui:composition>

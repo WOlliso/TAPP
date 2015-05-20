@@ -15,7 +15,15 @@
 				<h:outputLabel
 					value="Bienvenue sur votre espace de gestion de documents">
 				</h:outputLabel>
-				
+				<h:dataTable var="documents" value="#{editerdocBean.listedocs}">
+					<h:column><f:facet name="header">Nom</f:facet> 
+					#{documents.nom}
+						
+					</h:column>
+					<h:column>
+						<h:outputText value="#{documents.nom}"/>
+					</h:column>
+				</h:dataTable>
 				<h:panelGrid columns="4">
 					<h:outputLink id="lien_aff" value="Documentaffichage.jsf">
 						<h:outputText value="#{botns['documents.lienaff']}">
