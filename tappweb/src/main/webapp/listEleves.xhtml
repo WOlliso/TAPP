@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich">
+	  <f:view locale="#{facesContext.externalContext.requestLocale}">
+
+		<ui:composition template="WEB-INF/templates/Basic.xhtml">
+				<ui:define name="content">
+					<h:form title ="Liste Eleves">
+						<div style="font-size: 32px;text-align:center; height:40%; padding-top:2%">
+							<h:outputLabel
+								value="Liste des Eléves">
+							</h:outputLabel>
+								<rich:dataTable var="eleve">
+									<h:column>
+										<h:outputText value="#{eleve.classe}"/>
+									</h:column>
+									<h:column>
+										<h:outputText value="#{eleve.age}"/>
+									</h:column>
+									<h:column>
+										<h:outputText value="#{eleve.nom}"/>
+									</h:column>
+									<h:column>
+										<h:outputText value="#{eleve.prenom}"/>
+									</h:column>
+								</rich:dataTable>
+						</div>
+					</h:form>
+				</ui:define>
+		</ui:composition>
+	</f:view>
+
+</html>

@@ -7,18 +7,17 @@ import java.util.List;
 public class Eleve {
 	private String nom;
 	private String prenom;
-	private int age;
 	private Classe classe;
 
 	public Eleve() {
 
 	}
 
-	public Eleve(String nom, String prenom, int age, Classe classe) {
+	public Eleve(final String nom, final String prenom, final Classe classe) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
-		this.age = age;
+
 		this.classe = classe;
 	}
 
@@ -26,7 +25,7 @@ public class Eleve {
 		return nom;
 	}
 
-	public void setNom(String nom) {
+	public void setNom(final String nom) {
 		this.nom = nom;
 	}
 
@@ -34,23 +33,15 @@ public class Eleve {
 		return prenom;
 	}
 
-	public void setPrenom(String prenom) {
+	public void setPrenom(final String prenom) {
 		this.prenom = prenom;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public Classe getClasse() {
 		return classe;
 	}
 
-	public void setClasse(Classe classe) {
+	public void setClasse(final Classe classe) {
 		this.classe = classe;
 	}
 
@@ -69,20 +60,20 @@ public class Eleve {
 	 * DELETE_ELEVES="DELETE FROM eleves WHERE nom = ?";
 	 */
 
-	public Eleve insertEleve(String nom, String prenom, int age, Classe classe) throws SQLException {
+	public Eleve insertEleve(final String nom, final String prenom,
+			final Classe classe) throws SQLException {
 
 		final PreparedStatement preparedStatement = ServicesDAO
 				.preparedStatement(Requests.INSERT_ELEVE);
 		preparedStatement.setString(1, nom);
 		preparedStatement.setString(2, prenom);
-		preparedStatement.setInt(3, age);
-		preparedStatement.setObject(4, classe);
+		preparedStatement.setObject(3, classe);
 		preparedStatement.executeUpdate();
 
-		return new Eleve(nom, prenom, age, classe);
+		return new Eleve(nom, prenom, classe);
 	}
 
-	public List<Eleve> selectEleves() {
+	public List<Eleve> listEleves() {
 		return null;
 	}
 
