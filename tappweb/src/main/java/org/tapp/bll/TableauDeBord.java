@@ -2,8 +2,6 @@ package org.tapp.bll;
 
 import java.util.List;
 
-import org.tapp.gui.Document;
-
 public class TableauDeBord {
 
 	private Classe classe;

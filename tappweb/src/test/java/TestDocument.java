@@ -7,7 +7,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.tapp.gui.Document;
+import org.tapp.bll.Document;
 
 public class TestDocument {
 

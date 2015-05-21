@@ -1,12 +1,12 @@
-package org.tapp.bll;
+package org.tapp.gui;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.enterprise.inject.Model;
 
+import org.tapp.bll.Document;
 import org.tapp.dal.DocumentDAO;
-import org.tapp.gui.Document;
 
 @Model
 public class EditerdocBean {
