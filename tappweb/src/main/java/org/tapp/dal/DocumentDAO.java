@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.enterprise.inject.Model;
 
-import org.tapp.bll.Document;
+import org.tapp.gui.Document;
 
 @Model
 public class DocumentDAO extends ServicesDAO {

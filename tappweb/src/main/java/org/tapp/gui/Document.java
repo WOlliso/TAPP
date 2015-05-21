@@ -1,4 +1,4 @@
-package org.tapp.bll;
+package org.tapp.gui;
 
 import javax.enterprise.inject.Model;
 

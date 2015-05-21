@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.enterprise.inject.Model;
 
 import org.tapp.dal.DocumentDAO;
+import org.tapp.gui.Document;
 
 @Model
 public class EditerdocBean {
