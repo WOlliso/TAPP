@@ -13,8 +13,6 @@ import org.tapp.dal.InjectionDAOInter;
 public class EditerdocBean {
 	private String nom;
 
-	private Document doc;
-
 	public String getNom() {
 		return nom;
 	}
