@@ -8,4 +8,8 @@ public interface InjectionDAOInter {
 
 	public ArrayList<Document> Listedocs();
 
+	public void ajoutdoc(String nom);
+
+	public Document selectdoc(String nom);
+
 }

@@ -13,4 +13,17 @@ public class InjectionDAO implements InjectionDAOInter {
 		return doc.alldocs();
 	}
 
+	@Override
+	public void ajoutdoc(String nom) {
+		DocumentDAO doc = new DocumentDAO();
+		doc.adddoc(nom);
+
+	}
+
+	@Override
+	public Document selectdoc(String nom) {
+		DocumentDAO doc = new DocumentDAO();
+		return doc.selectdoc(nom);
+	}
+
 }

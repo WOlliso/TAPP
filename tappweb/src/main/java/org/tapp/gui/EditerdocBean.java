@@ -7,7 +7,6 @@ import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 
 import org.tapp.bll.Document;
-import org.tapp.dal.DocumentDAO;
 import org.tapp.dal.InjectionDAOInter;
 
 @Model
@@ -29,8 +28,7 @@ public class EditerdocBean {
 
 	public String ajoutdoc() throws SQLException {
 
-		DocumentDAO req = new DocumentDAO();
-		req.adddoc(nom);
+		mydocDAO.ajoutdoc(nom);
 		return "documentajoute";
 
 	}
@@ -41,10 +39,8 @@ public class EditerdocBean {
 	}
 
 	public Document getDoc() throws SQLException {
-		DocumentDAO req = new DocumentDAO();
-		doc = req.selectdoc(nom);
 
-		return doc;
+		return mydocDAO.selectdoc(nom);
 	}
 
 	public String docunique() {
