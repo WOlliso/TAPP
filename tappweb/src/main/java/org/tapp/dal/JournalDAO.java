@@ -1,7 +1,7 @@
 package org.tapp.dal;
 
 
-public class JournalDAO extends ServicesDAO {
+public class JournalDAO extends ServicesDAO implements InjectionDAOInter {
 
 	public static final String INSERT_CAHIER_JOURNALS = "INSERT INTO cahier_journal (nom_memo,date_memo) VALUES(?,?)";
 	public static final String SELECT_CAHIER_JOURNALS = "SELECT * FROM cahier_journal";

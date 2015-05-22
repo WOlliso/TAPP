@@ -29,21 +29,21 @@ public class JournalBean {
 		this.date = date;
 	}
 
+	
+	
 	public void createJournal(String name, Date date) {
 
 	}
+	
 	public void deleteJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.DELETE_CAHIER_JOURNALS);
 		
 	}
-	public void createJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.INSERT_CAHIER_JOURNALS);
-				
-	}
+	
 	public void modifyJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.UPDATE_CAHIER_JOURNALS);
+		
 	}
+	
 	public void readJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.SELECT_CAHIER_JOURNALS);
+		
 	}
 }
