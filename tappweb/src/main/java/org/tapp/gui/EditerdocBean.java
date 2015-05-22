@@ -4,14 +4,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.enterprise.inject.Model;
+import javax.inject.Inject;
 
 import org.tapp.bll.Document;
 import org.tapp.dal.DocumentDAO;
+import org.tapp.dal.InjectionDAOInter;
 
 @Model
 public class EditerdocBean {
 	private String nom;
-	private ArrayList<Document> listedocs;
+
 	private Document doc;
 
 	public String getNom() {
@@ -22,6 +24,9 @@ public class EditerdocBean {
 		this.nom = nom;
 	}
 
+	@Inject
+	InjectionDAOInter mydocDAO;
+
 	public String ajoutdoc() throws SQLException {
 
 		DocumentDAO req = new DocumentDAO();
@@ -31,10 +36,8 @@ public class EditerdocBean {
 	}
 
 	public ArrayList<Document> getListedocs() throws SQLException {
-		DocumentDAO req = new DocumentDAO();
-		listedocs = req.alldocs();
 
-		return listedocs;
+		return mydocDAO.Listedocs();
 	}
 
 	public Document getDoc() throws SQLException {

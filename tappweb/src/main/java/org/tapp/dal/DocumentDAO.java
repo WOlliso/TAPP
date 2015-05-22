@@ -5,11 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.enterprise.inject.Model;
-
 import org.tapp.bll.Document;
 
-@Model
 public class DocumentDAO extends ServicesDAO {
 	public static final String INSERT_DOCUMENTS = "INSERT INTO documents (nom_documents) VALUES(?)";
 	public static final String SELECT_DOCUMENTS = "SELECT * FROM documents";
@@ -73,4 +70,5 @@ public class DocumentDAO extends ServicesDAO {
 		preparedStatement.setString(1, nom);
 		preparedStatement.executeUpdate();
 	}
+
 }

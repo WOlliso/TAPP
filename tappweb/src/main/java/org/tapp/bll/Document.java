@@ -1,8 +1,5 @@
 package org.tapp.bll;
 
-import javax.enterprise.inject.Model;
-
-@Model
 public class Document {
 	String nom;
 
