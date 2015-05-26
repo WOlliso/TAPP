@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import javax.ejb.Stateful;
 import javax.enterprise.inject.Alternative;
 
-import org.tapp.dal.InjectionDAOInter;
+import org.tapp.dal.DocumentDAOInter;
 
 @Stateful
 @Alternative
-public class EJBinterDAO implements InjectionDAOInter {
+public class EJBDocuDAO implements DocumentDAOInter {
 
 	@Override
 	public ArrayList<Document> Listedocs() {
@@ -25,25 +25,6 @@ public class EJBinterDAO implements InjectionDAOInter {
 
 	@Override
 	public Document selectdoc(final String nom) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<Eleve> Listeleves() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addeleve(final String prenom, final String nom,
-			final String classe) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Eleve selectEleve(final String nom) {
 		// TODO Auto-generated method stub
 		return null;
 	}
