@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.tapp.bll.Document;
 import org.tapp.bll.Eleve;
+import org.tapp.bll.Journal;
 
 public interface InjectionDAOInter {
 
@@ -18,5 +19,11 @@ public interface InjectionDAOInter {
 	public void addeleve(String prenom, String nom, String classe);
 
 	public Eleve selectEleve(String nom);
+	
+	public ArrayList<Journal> Listjournals();
+	
+	public void createJournal(String name);
+	
+	
 
 }
