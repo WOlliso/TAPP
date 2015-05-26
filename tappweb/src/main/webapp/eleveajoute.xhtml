@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+
+		<ui:composition template="WEB-INF/templates/Basic.xhtml">
+				<ui:define name="content">
+					<h:form title ="Liste Eleves">
+						<div style="font-size: 32px;text-align:center; height:40%; padding-top:2%">
+							<h:outputLabel
+								value="Ajouter un Eléve">
+							</h:outputLabel>
+							<h:form>
+								<h:panelGrid colums="4">
+									<label id="fieldeleve1">Prenom:</label>
+									<h:inputText id= "fieldeleve1" value="#{eleveBean.prenom}" >Prenom</h:inputText>
+									<label id="fieldeleve2">Nom:</label>
+									<h:inputText id= "fieldeleve2" value="#{eleveBean.nom}" />
+									<label id="fieldeleve3">Classe:</label>
+									<h:inputText id= "fieldeleve3" value="#{eleveBean.classe}" />
+									<h:message style="color:red;" for="fieldeleve1"/>
+									<h:commandButton value="Envoyer" action="#{eleveBean.insereleve}">
+									</h:commandButton>
+								</h:panelGrid>
+							</h:form>
+						</div>
+						<div style="margin-left:30%; width:70%; height:20%; padding-top:10%">
+						<h:panelGrid columns="3" cellpadding="15" cellspacing= "15">
+							<h:commandButton value="#{botns['elevefiche.button.add']}" title="#{botns['elevefiche.button.add']}" action="elevefiche">
+							</h:commandButton>
+							<h:commandButton value="#{botns['elevefiche.button.list']}" title="#{botns['elevefiche.button.list']}" action="elevesliste">
+							</h:commandButton>
+						</h:panelGrid>
+					</div>
+					</h:form>
+				</ui:define>
+		</ui:composition>
+	</f:view>
+
+</html>
