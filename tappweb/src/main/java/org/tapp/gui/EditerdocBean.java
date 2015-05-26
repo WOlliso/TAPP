@@ -3,15 +3,16 @@ package org.tapp.gui;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
-import javax.inject.Inject;
 
 import org.tapp.bll.Document;
-import org.tapp.dal.InjectionDAOInter;
+import org.tapp.bll.EJBDocuDAO;
 
 @Model
 public class EditerdocBean {
 	private String nom;
+	private ArrayList<Document> listedocs;
 
 	public String getNom() {
 		return nom;
@@ -21,8 +22,11 @@ public class EditerdocBean {
 		this.nom = nom;
 	}
 
-	@Inject
-	InjectionDAOInter mydocDAO;
+	@EJB
+	EJBDocuDAO mydocDAO;
+
+	// @Inject
+	// DocumentDAOInter mydocDAO;
 
 	public String ajoutdoc() throws SQLException {
 
@@ -32,8 +36,8 @@ public class EditerdocBean {
 	}
 
 	public ArrayList<Document> getListedocs() throws SQLException {
-
-		return mydocDAO.Listedocs();
+		listedocs = mydocDAO.Listedocs();
+		return listedocs;
 	}
 
 	public Document getDoc() throws SQLException {
