@@ -2,9 +2,14 @@ package org.tapp.gui;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.enterprise.inject.Model;
+import javax.inject.Inject;
 
+import org.tapp.bll.Document;
+import org.tapp.bll.Journal;
+import org.tapp.dal.InjectionDAOInter;
 import org.tapp.dal.JournalDAO;
 import org.tapp.dal.ServicesDAO;
 
@@ -29,21 +34,35 @@ public class JournalBean {
 		this.date = date;
 	}
 
-	public void createJournal(String name, Date date) {
-
+	
+	
+	//Injection Fun Stuff Let's do it.
+	@Inject
+	InjectionDAOInter myJournalDAO;
+	
+	public String createJournal(String name, Date date) {
+		myJournalDAO.createJournal(name);
+		return "journalcreated";
 	}
-	public void deleteJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.DELETE_CAHIER_JOURNALS);
+	
+	public ArrayList<Journal> getJournalList() throws SQLException {
+		
+		return myJournalDAO.getJournalList();
 		
 	}
-	public void createJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.INSERT_CAHIER_JOURNALS);
-				
+	
+	public String deleteJournal() throws SQLException {
+		myJournalDAO.deleteJournal();
+		return "journaldeleted";
+		
 	}
+	
 	public void modifyJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.UPDATE_CAHIER_JOURNALS);
+		
 	}
-	public void readJournal() throws SQLException {
-		ServicesDAO.preparedStatement(JournalDAO.SELECT_CAHIER_JOURNALS);
+	
+	public Journal readJournal() throws SQLException {
+		return myJournalDAO.readJournal(name);
+		
 	}
 }
