@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.tapp.bll.Document;
+
 import org.tapp.bll.Journal;
 
 
