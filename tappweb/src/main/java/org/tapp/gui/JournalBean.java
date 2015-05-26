@@ -2,7 +2,11 @@ package org.tapp.gui;
 
 import java.sql.Date;
 import java.sql.SQLException;
+
 import javax.enterprise.inject.Model;
+import javax.inject.Inject;
+
+import org.tapp.dal.InjectionDAOInter;
 import org.tapp.dal.JournalDAO;
 import org.tapp.dal.ServicesDAO;
 
@@ -27,7 +31,8 @@ public class JournalBean {
 		this.date = date;
 	}
 
-	
+	@Inject
+	InjectionDAOInter myJournalDAO;
 	
 	public void createJournal(String name, Date date) {
 
