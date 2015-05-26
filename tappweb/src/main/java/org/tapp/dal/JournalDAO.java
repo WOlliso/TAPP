@@ -5,10 +5,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
+
 import org.tapp.bll.Journal;
 
 
-public class JournalDAO extends ServicesDAO  {
+public class JournalDAO extends ServicesDAO  implements JournalDAOInter {
 
 	public static final String INSERT_CAHIER_JOURNALS = "INSERT INTO cahier_journal (nom_memo,date_memo) VALUES(?,?)";
 	public static final String SELECT_CAHIER_JOURNALS = "SELECT * FROM cahier_journal";
@@ -38,31 +39,25 @@ public class JournalDAO extends ServicesDAO  {
 		preparedStatement.setString(1, name);
 		preparedStatement.executeUpdate();
 	}
+
+	@Override
+	public ArrayList<Journal> getJournalList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteJournal() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Journal readJournal(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@Override
-//	public ArrayList<Document> Listedocs() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//	@Override
-//	public void ajoutdoc(String nom) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//	@Override
-//	public Document selectdoc(String nom) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+
 }

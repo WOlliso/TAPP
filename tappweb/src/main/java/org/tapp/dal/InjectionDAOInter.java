@@ -20,13 +20,8 @@ public interface InjectionDAOInter {
 
 	public Eleve selectEleve(String nom);
 	
-	public ArrayList<Journal> getJournalList();
 	
-	public Journal createJournal(String name);
 	
-	public String deleteJournal();
-	
-	public Journal readJournal(String name);
 	
 
 }

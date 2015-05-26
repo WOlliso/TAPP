@@ -11,6 +11,7 @@ import org.tapp.bll.Document;
 import org.tapp.bll.Journal;
 import org.tapp.dal.InjectionDAOInter;
 import org.tapp.dal.JournalDAO;
+import org.tapp.dal.JournalDAOInter;
 import org.tapp.dal.ServicesDAO;
 
 @Model
@@ -38,7 +39,7 @@ public class JournalBean {
 	
 	//Injection Fun Stuff Let's do it.
 	@Inject
-	InjectionDAOInter myJournalDAO;
+	JournalDAOInter myJournalDAO;
 	
 	public String createJournal(String name, Date date) {
 		myJournalDAO.createJournal(name);
