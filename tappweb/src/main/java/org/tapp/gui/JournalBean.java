@@ -2,9 +2,7 @@ package org.tapp.gui;
 
 import java.sql.Date;
 import java.sql.SQLException;
-
 import javax.enterprise.inject.Model;
-
 import org.tapp.dal.JournalDAO;
 import org.tapp.dal.ServicesDAO;
 
