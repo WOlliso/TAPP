@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 import javax.ejb.Stateful;
 import javax.enterprise.inject.Alternative;
+import javax.enterprise.inject.Default;
 
 import org.tapp.dal.DocumentDAO;
 import org.tapp.dal.DocumentDAOInter;
 
 @Stateful
-@Alternative
+@Default
 public class EJBDocuDAO implements DocumentDAOInter {
 
 	@Override

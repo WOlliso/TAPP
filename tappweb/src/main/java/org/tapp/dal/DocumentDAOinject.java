@@ -2,8 +2,11 @@ package org.tapp.dal;
 
 import java.util.ArrayList;
 
+import javax.enterprise.inject.Alternative;
+
 import org.tapp.bll.Document;
 
+@Alternative
 public class DocumentDAOinject implements DocumentDAOInter {
 
 	@Override

@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
+import javax.inject.Inject;
 
 import org.tapp.bll.Document;
 import org.tapp.bll.EJBDocuDAO;
+import org.tapp.dal.DocumentDAOInter;
 
 @Model
 public class EditerdocBean {
@@ -22,11 +24,11 @@ public class EditerdocBean {
 		this.nom = nom;
 	}
 
-	@EJB
-	EJBDocuDAO mydocDAO;
+//	@EJB
+//	EJBDocuDAO mydocDAO;
 
-	// @Inject
-	// DocumentDAOInter mydocDAO;
+	 @Inject
+	 DocumentDAOInter mydocDAO;
 
 	public String ajoutdoc() throws SQLException {
 
