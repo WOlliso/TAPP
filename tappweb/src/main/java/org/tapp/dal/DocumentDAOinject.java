@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package org.tapp.dal;
 
 import java.util.ArrayList;
@@ -65,4 +65,4 @@ public class DocumentDAOinject implements DocumentDAOInter {
 	}
 
 }
->>>>>>> refs/heads/william
+
