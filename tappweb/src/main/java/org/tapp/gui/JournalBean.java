@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.enterprise.inject.Model;
+import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
 import org.tapp.bll.Document;
@@ -14,10 +15,14 @@ import org.tapp.dal.JournalDAO;
 import org.tapp.dal.JournalDAOInter;
 import org.tapp.dal.ServicesDAO;
 
-@Model
+@ManagedBean (name="journalBean")
 public class JournalBean {
 	private String name;
 	private Date date;
+	
+	public JournalBean() {
+		
+	}
 
 	public String getName() {
 		return name;
@@ -27,6 +32,7 @@ public class JournalBean {
 		this.name = name;
 	}
 
+	
 	public Date getDate() {
 		return date;
 	}
@@ -38,11 +44,11 @@ public class JournalBean {
 	
 	
 	//Injection Fun Stuff Let's do it.
-	@Inject
-	JournalDAOInter myJournalDAO;
+	 @Inject
+	 JournalDAOInter myJournalDAO;
 	
-	public String createJournal(String name, Date date) {
-		myJournalDAO.createJournal(name);
+	public String createJournal() {
+		 myJournalDAO.createJournal(name);
 		return "journalcreated";
 	}
 	
@@ -66,4 +72,12 @@ public class JournalBean {
 		return myJournalDAO.readJournal(name);
 		
 	}
+	public JournalDAOInter getMyJournalDAO() {
+		return myJournalDAO;
+	}
+
+	public void setMyJournalDAO(JournalDAOInter myJournalDAO) {
+		this.myJournalDAO = myJournalDAO;
+	}
+
 }

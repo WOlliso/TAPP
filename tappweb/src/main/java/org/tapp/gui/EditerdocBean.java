@@ -5,11 +5,19 @@ import java.util.ArrayList;
 
 import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
+<<<<<<< HEAD
 import javax.mail.Address;
+=======
+import javax.inject.Inject;
+>>>>>>> refs/heads/william
 
 import org.tapp.bll.Document;
 import org.tapp.bll.EJBDocuDAO;
+<<<<<<< HEAD
 import org.tapp.bll.EJBDocuMail;
+=======
+import org.tapp.dal.DocumentDAOInter;
+>>>>>>> refs/heads/william
 
 @Model
 public class EditerdocBean {
@@ -24,12 +32,20 @@ public class EditerdocBean {
 		this.nom = nom;
 	}
 
+<<<<<<< HEAD
 	@EJB(beanName="EJBDocuDAO")
 	EJBDocuDAO mydocDAO;
 	
 	@EJB(beanName="EJBDocuMail")
 	EJBDocuMail mydocmail;
 	
+=======
+//	@EJB
+//	EJBDocuDAO mydocDAO;
+
+	 @Inject
+	 DocumentDAOInter mydocDAO;
+>>>>>>> refs/heads/william
 
 	public String ajoutdoc() throws SQLException {
 

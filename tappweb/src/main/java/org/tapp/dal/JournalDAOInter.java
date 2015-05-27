@@ -10,7 +10,7 @@ public interface JournalDAOInter {
 	
 		public ArrayList<Journal> getJournalList();
 		
-		public Journal createJournal(String name);
+		public String createJournal(String name);
 		
 		public String deleteJournal();
 		
