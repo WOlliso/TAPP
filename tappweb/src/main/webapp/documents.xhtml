@@ -22,7 +22,7 @@
 					</h:column>
 					
 				</h:dataTable>
-				<h:panelGrid columns="4">
+				<h:panelGrid columns="5">
 					<h:outputLink id="lien_aff" value="Documentaffichage.jsf">
 						<h:outputText value="#{botns['documents.lienaff']}">
 						</h:outputText>
@@ -39,7 +39,8 @@
 						<h:outputText value="#{botns['documents.liensup']}">
 						</h:outputText>
 					</h:outputLink>
-			
+			<h:commandButton value="Envoyer mail" action="#{editerdocBean.mailenvoye}">
+	</h:commandButton>
 				</h:panelGrid>
 			</h:form>
 		</ui:define>

@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
+import javax.mail.Address;
 
 import org.tapp.bll.Document;
 import org.tapp.bll.EJBDocuDAO;
+import org.tapp.bll.EJBDocuMail;
 
 @Model
 public class EditerdocBean {
@@ -22,11 +24,12 @@ public class EditerdocBean {
 		this.nom = nom;
 	}
 
-	@EJB
+	@EJB(beanName="EJBDocuDAO")
 	EJBDocuDAO mydocDAO;
-
-	// @Inject
-	// DocumentDAOInter mydocDAO;
+	
+	@EJB(beanName="EJBDocuMail")
+	EJBDocuMail mydocmail;
+	
 
 	public String ajoutdoc() throws SQLException {
 
@@ -47,5 +50,11 @@ public class EditerdocBean {
 
 	public String docunique() {
 		return "documentunique";
+	}
+	
+	public String mailenvoye(){
+		mydocmail.send("nicolas.valadier@hotmail.fr", "Essai", "c'est génial");
+		return "mailenvoye";
+		
 	}
 }
