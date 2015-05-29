@@ -11,12 +11,27 @@
 	
 	<ui:define name="content">
 	
-		<h:form title="Create Memo">
+		<h:form title="Journal Home">
 	
 			<p:panelGrid columns="4" cellpadding="10">
 	
 				<h:outputLink id="add_journal_link" value="journalcreate.jsf">
-						<h:outputText value="Click here to Create A Journal">
+						<h:outputText value="Create A Journal">
+						</h:outputText>
+					</h:outputLink>
+					
+					<h:outputLink id="delete_journal_link" value="journaldelete.jsf">
+						<h:outputText value="Delete A Journal">
+						</h:outputText>
+					</h:outputLink>
+					
+					<h:outputLink id="view_journals_link" value="journallist.jsf">
+						<h:outputText value="See all journals">
+						</h:outputText>
+					</h:outputLink>
+					
+					<h:outputLink id="modify_journal_link" value="journalmodify.jsf">
+						<h:outputText value="Modify A Journal">
 						</h:outputText>
 					</h:outputLink>
 	
